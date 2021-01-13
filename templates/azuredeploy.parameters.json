@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "virtualNetworkName": {
+      "value": "TestVnet"
+    },
+    "virtualNetworkAddressPrefix": {
+      "value": "10.0.0.0/16"
+    },
+    "subnetName": {
+      "value": "DefaultSubnet"
+    },
+    "subnetAddressPrefix": {
+      "value": "10.0.0.0/24"
+    },
+    "vmName": {
+      "value": "TestVm"
+    },
+    "vmSize": {
+      "value": "Standard_F4s_v2"
+    },
+    "imagePublisher": {
+      "value": "Canonical"
+    },
+    "imageOffer": {
+      "value": "UbuntuServer"
+    },
+    "imageSku": {
+      "value": "18.04-LTS"
+    },
+    "authenticationType": {
+      "value": "password"
+    },
+    "adminUsername": {
+      "value": "azadmin"
+    },
+    "adminPasswordOrKey": {
+      "value": "Passw0rd!"
+    },
+    "diskStorageAccounType": {
+      "value": "Premium_LRS"
+    },
+    "numDataDisks": {
+      "value": 1
+    },
+    "osDiskSize": {
+      "value": 50
+    },
+    "dataDiskSize": {
+      "value": 50
+    },
+    "dataDiskCaching": {
+      "value": "ReadWrite"
+    },
+    "scriptFilePath": {
+      "value": "https://paolosalvatori.blob.core.windows.net/scripts"
+    },
+    "scriptFileName": {
+      "value": "servicebus_nslookup.sh"
+    },
+    "deployLogAnalytics": {
+      "value": true
+    },
+    "workspaceName": {
+      "value": "ServiceBusPrivateLinkTestWorkspace"
+    },
+    "workspaceSku": {
+      "value": "Standard"
+    },
+    "networkAclsDefaultAction": {
+        "value": "Deny"
+    },
+    "allowBlobPublicAccess": {
+        "value": true
+    },
+    "fileShareName": {
+        "value": "documents"
+    },
+    "shareQuota": {
+        "value": 5120
+    }
+  }
+}
