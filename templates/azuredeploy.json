@@ -592,11 +592,11 @@
         "type": "OmsAgentForLinux",
         "typeHandlerVersion": "1.12",
         "settings": {
-          "workspaceId": "[reference(variables('workspaceId'), '2020-03-01-preview').customerId]",
+          "workspaceId": "[reference(variables('workspaceId'), '2020-08-01').customerId]",
           "stopOnMultipleConnections": false
         },
         "protectedSettings": {
-          "workspaceKey": "[listKeys(variables('workspaceId'),'2020-03-01-preview').primarySharedKey]"
+          "workspaceKey": "[listKeys(variables('workspaceId'),'2020-08-01').primarySharedKey]"
         }
       }
     },
@@ -620,7 +620,7 @@
     },
     {
       "condition": "[parameters('deployLogAnalytics')]",
-      "apiVersion": "2020-03-01-preview",
+      "apiVersion": "2020-08-01",
       "type": "Microsoft.OperationalInsights/workspaces",
       "name": "[parameters('workspaceName')]",
       "location": "[parameters('location')]",
@@ -631,7 +631,7 @@
       },
       "resources": [
         {
-          "apiVersion": "2020-03-01-preview",
+          "apiVersion": "2020-08-01",
           "type": "dataSources",
           "name": "Kern",
           "dependsOn": [
@@ -660,7 +660,7 @@
           }
         },
         {
-          "apiVersion": "2020-03-01-preview",
+          "apiVersion": "2020-08-01",
           "type": "dataSources",
           "name": "Syslog",
           "dependsOn": [
@@ -689,7 +689,7 @@
           }
         },
         {
-          "apiVersion": "2020-03-01-preview",
+          "apiVersion": "2020-08-01",
           "type": "dataSources",
           "name": "User",
           "dependsOn": [
@@ -718,7 +718,7 @@
           }
         },
         {
-          "apiVersion": "2020-03-01-preview",
+          "apiVersion": "2020-08-01",
           "type": "dataSources",
           "name": "SampleSyslogCollection1",
           "dependsOn": [
@@ -730,7 +730,7 @@
           }
         },
         {
-          "apiVersion": "2020-03-01-preview",
+          "apiVersion": "2020-08-01",
           "type": "dataSources",
           "name": "DiskPerfCounters",
           "dependsOn": [
@@ -770,7 +770,7 @@
           }
         },
         {
-          "apiVersion": "2020-03-01-preview",
+          "apiVersion": "2020-08-01",
           "type": "dataSources",
           "name": "ProcessorPerfCounters",
           "dependsOn": [
@@ -804,7 +804,7 @@
           }
         },
         {
-          "apiVersion": "2020-03-01-preview",
+          "apiVersion": "2020-08-01",
           "type": "dataSources",
           "name": "ProcessPerfCounters",
           "dependsOn": [
@@ -832,7 +832,7 @@
           }
         },
         {
-          "apiVersion": "2020-03-01-preview",
+          "apiVersion": "2020-08-01",
           "type": "dataSources",
           "name": "SystemPerfCounters",
           "dependsOn": [
@@ -851,7 +851,7 @@
           }
         },
         {
-          "apiVersion": "2020-03-01-preview",
+          "apiVersion": "2020-08-01",
           "type": "dataSources",
           "name": "NetworkPerfCounters",
           "dependsOn": [
@@ -891,7 +891,7 @@
           }
         },
         {
-          "apiVersion": "2020-03-01-preview",
+          "apiVersion": "2020-08-01",
           "type": "dataSources",
           "name": "MemorydataSources",
           "dependsOn": [
@@ -919,7 +919,7 @@
           }
         },
         {
-          "apiVersion": "2020-03-01-preview",
+          "apiVersion": "2020-08-01",
           "type": "dataSources",
           "name": "SampleLinuxPerfCollection1",
           "dependsOn": [
@@ -934,7 +934,7 @@
     },
     {
       "type": "Microsoft.Network/privateDnsZones",
-      "apiVersion": "2018-09-01",
+      "apiVersion": "2020-06-01",
       "name": "[variables('filePrivateDnsZoneName')]",
       "location": "global",
       "properties": {
@@ -945,7 +945,7 @@
     },
     {
       "type": "Microsoft.Network/privateDnsZones",
-      "apiVersion": "2018-09-01",
+      "apiVersion": "2020-06-01",
       "name": "[variables('blobPrivateDnsZoneName')]",
       "location": "global",
       "properties": {
@@ -956,7 +956,7 @@
     },
     {
       "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
-      "apiVersion": "2018-09-01",
+      "apiVersion": "2020-06-01",
       "name": "[concat(variables('filePrivateDnsZoneName'), '/link_to_', toLower(parameters('virtualNetworkName')))]",
       "location": "global",
       "dependsOn": [
@@ -972,7 +972,7 @@
     },
     {
       "type": "Microsoft.Network/privateDnsZones/virtualNetworkLinks",
-      "apiVersion": "2018-09-01",
+      "apiVersion": "2020-06-01",
       "name": "[concat(variables('blobPrivateDnsZoneName'), '/link_to_', toLower(parameters('virtualNetworkName')))]",
       "location": "global",
       "dependsOn": [
